@@ -20,6 +20,15 @@ class SuppliesController < ApplicationController
 
   end
 
+  def update
+    begin
+      @supply = Supply.find(:supply_id)
+      @supply.update_attributes(params)
+    rescue => e
+      render(json: {error: e.message}, status: :unprocessable_entity)
+    end
+  end
+
 private
 
   def params
