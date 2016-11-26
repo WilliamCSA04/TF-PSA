@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get '/' => 'application#show'
 
+  # cars routes
+  get '/cars/all' => 'cars#index'
+  get '/cars/:car_id' => 'cars#get' 
   post '/cars' => 'cars#create'
   put '/cars/:car_id' => 'cars#update'
 
