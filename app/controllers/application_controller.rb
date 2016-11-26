@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   def show
     @hello = "hello"
-    render(json: @hello.to_json)
+    render :template => "hello"
+    
   end
 
 end
