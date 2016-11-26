@@ -27,7 +27,6 @@ class CarsController < ApplicationController
     begin
       @car = Car.find(:car_id)
       @car.update_attributes(params)
-      @car.save_car
     rescue => e.message
       render(json: {error: e.message}, status: :unprocessable_entity)
     end
