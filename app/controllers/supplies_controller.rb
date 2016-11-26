@@ -4,4 +4,8 @@ class SuppliesController < ApplicationController
     @supplies = Supply.get_all_supplies
   end
 
+  def get
+    @supply = Supply.find(:supply_id)
+  end
+
 end
