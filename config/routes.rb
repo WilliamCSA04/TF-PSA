@@ -5,13 +5,19 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  get '/' => 'application#show'
+  root 'application#show'
 
   # cars routes
-  get '/cars/all' => 'cars#index'
-  get '/cars/:car_id' => 'cars#get' 
+  get '/cars' => 'cars#index'
+  get '/cars/:car_id' => 'cars#get'
   post '/cars' => 'cars#create'
   put '/cars/:car_id' => 'cars#update'
+
+  # supplies routes
+  get '/supplies' => 'supplies#index'
+  get '/supplies/:supply_id' => 'supplies#get'
+  post '/supplies' => 'supplies#create'
+  put '/supplies/:supply_id' => 'supplies#update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
