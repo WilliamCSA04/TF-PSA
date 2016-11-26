@@ -4,7 +4,7 @@ class Car < ActiveRecord::Base
     Car.all
   end
 
-  def create_car
+  def save_car
     self.save!
   end
 
