@@ -4,4 +4,8 @@ class Supply < ActiveRecord::Base
     Supply.all
   end
 
+  def save_supply
+    self.save!
+  end
+
 end
