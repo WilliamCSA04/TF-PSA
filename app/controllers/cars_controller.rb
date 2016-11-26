@@ -1,5 +1,13 @@
 class CarsController < ApplicationController
 
+  def index
+    @cars = Car.get_all_cars
+  end
+
+  def get
+    @car = Car.find(:car_id)
+  end
+
   def create
     begin
       raise "Full type is empty" if :full_type.empty?

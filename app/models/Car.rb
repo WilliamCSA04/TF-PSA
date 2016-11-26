@@ -1,6 +1,6 @@
 class Car < ActiveRecord::Base
 
-  def get_all_cars
+  def self.get_all_cars
     Car.all
   end
 
