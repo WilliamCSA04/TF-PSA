@@ -3,6 +3,7 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.get_all_cars
+    render :template => "list_all_cars"
   end
 
   def get

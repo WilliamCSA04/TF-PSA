@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   root 'application#show'
 
   # cars routes
-  get 'cars' => 'cars#index'
+  #get 'cars' => 'cars#index'
   get 'cars/show' => 'cars#show'
+  get 'cars/index' => 'cars#index'
   get 'cars/get/:car_id' => 'cars#get'
   post 'cars' => 'cars#create'
   put 'cars/update/:car_id' => 'cars#update'
