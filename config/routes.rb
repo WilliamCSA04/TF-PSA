@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   # supplies routes
   get 'supplies' => 'supplies#index'
   get 'supplies/get/:supply_id' => 'supplies#get'
+  get 'supplies/show' => 'supplies#show'
   post 'supplies' => 'supplies#create'
   put 'supplies/update/:supply_id' => 'supplies#update'
 

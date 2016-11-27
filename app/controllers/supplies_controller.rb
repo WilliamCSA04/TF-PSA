@@ -29,6 +29,10 @@ class SuppliesController < ApplicationController
     end
   end
 
+  def show
+    render :template => "register_supply"
+  end
+
 private
 
   def params
