@@ -7,7 +7,8 @@ class CarsController < ApplicationController
   end
 
   def get
-    @car = Car.find(:car_id)
+    @car = Car.find(params[:car_id])
+    render :template => "update_car"
   end
 
   def create
@@ -33,6 +34,7 @@ class CarsController < ApplicationController
   def show
     render :template => "register_car"
   end
+
 
 private
 
