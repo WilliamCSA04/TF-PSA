@@ -13,15 +13,17 @@
           <table style="width:100%">
             <% @cars.each do |element| %>
             <tr>
-              <th>fuel_type</th>
-              <th>plate</th>
-              <th>model</th>
-              <th>year</th>
-              <th>fuel_capacity</th>
-              <th>manufacturer</th>
-              <th>odometer</th>
+              <th>Identificador do carro</th>
+              <th>Tipo de combustível</th>
+              <th>Placa</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Capacidade do Tanque</th>
+              <th>Fabricante</th>
+              <th>Conta quilómetragem</th>
             </tr>
             <tr>
+              <td><%= element.id %></td>
               <td><%= element.fuel_type %></td>
               <td><%= element.plate %></td>
               <td><%= element.model %></td>

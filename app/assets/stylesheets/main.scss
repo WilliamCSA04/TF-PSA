@@ -16,11 +16,14 @@ th, td {
 }
 table tr:nth-child(even) {
     background-color: #eee;
+    text-align: center;
 }
 table tr:nth-child(odd) {
    background-color:#fff;
+   text-align: center;
 }
 table th {
     background-color: black;
     color: white;
+    text-align: center;
 }
