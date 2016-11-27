@@ -10,8 +10,28 @@
     <form action="/cars/index" method="post">
       <div class="row">
         <div class="col-lg-4 form-group">
-          <label for='model' class="control-label">Modelo: </label>
-          
+          <table style="width:100%">
+            <tr>
+              <th>fuel_type</th>
+              <th>plate</th>
+              <th>model</th>
+              <th>year</th>
+              <th>fuel_capacity</th>
+              <th>manufacturer</th>
+              <th>odometer</th>
+            </tr>
+            <% @cars.each do |element| %>
+            <tr>
+              <td><%= element.fuel_type %></td>
+              <td><%= element.plate %></td>
+              <td><%= element.model %></td>
+              <td><%= element.year %></td>
+              <td><%= element.fuel_capacity %></td>
+              <td><%= element.manufacturer %></td>
+              <td><%= element.odometer %></td>
+            </tr>
+            <% end %>
+          </table>
         </div>
       </div>
     </form>
