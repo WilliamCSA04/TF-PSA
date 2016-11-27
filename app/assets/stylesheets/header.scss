@@ -1,12 +1,30 @@
 .header-style {
-	background-color: #6bb9f0 !important;
+	background-color: #1f2532 !important;
 	border-color: rgba(0, 0, 0, 0) !important;
-	a{
-		color: #FFF !important;
-	}
+
 }
 
 .logo {
 	margin-right: 20px;
 	margin-top: 8px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    -moz-transition: all 0.4s ease-in-out !important;
+    -o-transition: all 0.4s ease-in-out !important;
+    -webkit-transition: all 0.4s ease-in-out !important;
+    transition: all 0.4s ease-in-out !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #999 !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #62c7e2 !important;
 }
