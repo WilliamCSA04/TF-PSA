@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-static-top header-style">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="logo">
+        <%= link_to image_tag("logo.png"), root_path %>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse logo-text" id="navbar-menu-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Início</a></li>
+        <li><a href="/cars/show">Cadastrar veículo</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
