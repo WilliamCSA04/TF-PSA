@@ -11,15 +11,10 @@ class CarsController < ApplicationController
 
   def create
     begin
-      raise "Full type is null" unless :full_type.present?
-      raise "Plate is null" unless :plate.present?
-      raise "Model is null" unless :model.present?
-      raise "Year is null" unless :year.present?
-      raise "Fuel capacity is null" unless :fuel_capacity.present?
-      raise "Manufacturer is null" unless :manufacturer.present?
       @car = Car.new(cars_params)
+      raise "invalid params" unless @car.valid?
       @car.save!
-      render(json: @car.to_json)
+      render :template => "register_car"
     rescue => e
       render(json: {error: e.message}, status: :unprocessable_entity)
     end
