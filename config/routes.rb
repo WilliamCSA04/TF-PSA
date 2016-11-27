@@ -8,16 +8,18 @@ Rails.application.routes.draw do
   root 'application#show'
 
   # cars routes
-  get '/cars' => 'cars#index'
-  get '/cars/:car_id' => 'cars#get'
-  post '/cars' => 'cars#create'
-  put '/cars/:car_id' => 'cars#update'
+  get 'cars' => 'cars#index'
+  get 'cars/show' => 'cars#show'
+  get 'cars/:car_id' => 'cars#get'
+  post 'cars' => 'cars#create'
+  put 'cars/:car_id' => 'cars#update'
+
 
   # supplies routes
-  get '/supplies' => 'supplies#index'
-  get '/supplies/:supply_id' => 'supplies#get'
-  post '/supplies' => 'supplies#create'
-  put '/supplies/:supply_id' => 'supplies#update'
+  get 'supplies' => 'supplies#index'
+  get 'supplies/:supply_id' => 'supplies#get'
+  post 'supplies' => 'supplies#create'
+  put 'supplies/:supply_id' => 'supplies#update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

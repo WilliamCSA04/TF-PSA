@@ -32,6 +32,10 @@ class CarsController < ApplicationController
     end
   end
 
+  def show
+    render :template => "register_car"
+  end
+
 private
 
   def params
