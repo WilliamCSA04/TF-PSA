@@ -16,7 +16,7 @@ class CarsController < ApplicationController
       @car = Car.new(cars_params)
       raise "invalid params" unless @car.valid?
       @car.save!
-      render :template => "register_car"
+      render :template => "hello"
     rescue => e
       render(json: {error: e.message}, status: :unprocessable_entity)
     end
