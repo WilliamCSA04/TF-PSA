@@ -15,10 +15,13 @@ class CarsController < ApplicationController
     begin
       @car = Car.new(cars_params)
       raise "invalid params" unless @car.valid?
-      @car.save!
-      render :template => "hello"
+      if @car.save!
+        redirect_to '/'
+      else
+        raise "Erro no cadastro"
+      end
     rescue => e
-      render(json: {error: e.message}, status: :unprocessable_entity)
+      redirect_to '/cars/show'
     end
   end
 
