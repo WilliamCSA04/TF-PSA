@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   put 'cars/update/:car_id' => 'cars#update'
   get 'cars/show' => 'cars#show'
   get 'cars/index' => 'cars#index'
+  get 'car_consumption/index' => 'consumption#index'
   get 'cars/get/:car_id' => 'cars#get'
   post 'cars' => 'cars#create'
 

@@ -11,6 +11,7 @@
       <div class="row">
         <div class="col-lg-4 form-group">
           <table style="width:100%">
+            <% @cars.each do |element| %>
             <tr>
               <th>fuel_type</th>
               <th>plate</th>
@@ -20,7 +21,6 @@
               <th>manufacturer</th>
               <th>odometer</th>
             </tr>
-            <% @cars.each do |element| %>
             <tr>
               <td><%= element.fuel_type %></td>
               <td><%= element.plate %></td>
