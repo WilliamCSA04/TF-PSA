@@ -10,16 +10,16 @@ Rails.application.routes.draw do
   # cars routes
   get 'cars' => 'cars#index'
   get 'cars/show' => 'cars#show'
-  get 'cars/:car_id' => 'cars#get'
+  get 'cars/get/:car_id' => 'cars#get'
   post 'cars' => 'cars#create'
-  put 'cars/:car_id' => 'cars#update'
+  put 'cars/update/:car_id' => 'cars#update'
 
 
   # supplies routes
   get 'supplies' => 'supplies#index'
-  get 'supplies/:supply_id' => 'supplies#get'
+  get 'supplies/get/:supply_id' => 'supplies#get'
   post 'supplies' => 'supplies#create'
-  put 'supplies/:supply_id' => 'supplies#update'
+  put 'supplies/update/:supply_id' => 'supplies#update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
