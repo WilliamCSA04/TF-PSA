@@ -12,11 +12,11 @@ class CarsController < ApplicationController
   def create
     begin
       raise "Full type is null" unless :full_type.present?
-      raise "Plate is null" if :plate.present?
-      raise "Model is null" if :model.present?
+      raise "Plate is null" unless :plate.present?
+      raise "Model is null" unless :model.present?
       raise "Year is null" unless :year.present?
       raise "Fuel capacity is null" unless :fuel_capacity.present?
-      raise "Manufacturer is null" if :manufacturer.present?
+      raise "Manufacturer is null" unless :manufacturer.present?
       @car = Car.new(cars_params)
       @car.save!
       render(json: @car.to_json)
