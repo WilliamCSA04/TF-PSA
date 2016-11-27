@@ -4,8 +4,4 @@ class Car < ActiveRecord::Base
     Car.all
   end
 
-  def save_car
-    self.save!
-  end
-
 end

@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+ skip_before_filter :verify_authenticity_token
 
   def index
     @cars = Car.get_all_cars
@@ -16,9 +17,10 @@ class CarsController < ApplicationController
       raise "Year is too old" if :year < 1884
       raise "Fuel capacity should be higher than 0" unless :fuel_capacity > 0
       raise "Manufacturer is empty" if :manufacturer.empty?
-      @car = Car.new(params)
-      @car.save_car
-    rescue => e.message
+      @car = Car.new(cars_params)
+      @car.save!
+      render(json: @car.to_json)
+    rescue => e
       render(json: {error: e.message}, status: :unprocessable_entity)
     end
   end
@@ -38,7 +40,7 @@ class CarsController < ApplicationController
 
 private
 
-  def params
+  def cars_params
     params.permit(:fuel_type, :plate, :model, :year, :fuel_capacity, :manufacturer, :odometer)
   end
 
