@@ -2,25 +2,34 @@ html, body {
   font-family: "Open Sans", open-sans, sans-serif  !important;
 	-webkit-font-smoothing: antialiased  !important;
 }
+
 table {
     width:100%;
 }
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
+
 th, td {
     padding: 5px;
     text-align: center;
 }
+
 table tr:nth-child(even) {
     background-color: #eee;
+    text-align: center;
 }
+
 table tr:nth-child(odd) {
    background-color:#fff;
+   text-align: center;
 }
+
 table th {
     background-color: black;
     color: white;
+    text-align: center;
 }

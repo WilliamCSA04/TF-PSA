@@ -9,28 +9,42 @@
     <h1>Lista de veículos</h1>
     <form action="/cars/index" method="post">
       <div class="row">
-        <div class="col-lg-4 form-group">
+        <div class="col-lg-12 form-group">
           <table style="width:100%">
+            <% if @cars.size > 0 %>
             <% @cars.each do |element| %>
             <tr>
-              <th>fuel_type</th>
-              <th>plate</th>
-              <th>model</th>
-              <th>year</th>
-              <th>fuel_capacity</th>
-              <th>manufacturer</th>
-              <th>odometer</th>
+              <th>ID</th>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Km</th>
+              <th>Tipo de Combustível</th>
+              <th>Capacidade</th>
+              <th>Atualizar</th>
+              <th>Add. Abastecimento</th>
+              <th>Remover</th>
             </tr>
             <tr>
-              <td><%= element.fuel_type %></td>
+              <td><%= element.id %></td>
               <td><%= element.plate %></td>
+              <td><%= element.manufacturer %></td>
               <td><%= element.model %></td>
               <td><%= element.year %></td>
-              <td><%= element.fuel_capacity %></td>
-              <td><%= element.manufacturer %></td>
               <td><%= element.odometer %></td>
-            </tr>
-            <% end %>
+              <td><%= element.fuel_type %></td>
+              <td><%= element.fuel_capacity %></td>
+              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-edit"></i><% end %>
+              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-scale"></i><% end %>
+              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-remove"></i><% end %>
+              </tr>
+              <% end %>
+
+              <% else %>
+              Não existem veículos cadastrados
+              <% end %>
+
           </table>
         </div>
       </div>
