@@ -19,7 +19,6 @@ class SuppliesController < ApplicationController
       if params[:new_series].nil?
         Serie.create!
         most_recent_serie = Serie.all.order(created_at: :desc).first
-        raise "primeioro" if most_recent_serie.nil?
         @supply.series_id = most_recent_serie.id
       else
         last_supply = Supply.where(car_id: @car.id).order(created_at: :desc).first
@@ -28,7 +27,6 @@ class SuppliesController < ApplicationController
           most_recent_serie = Serie.all.order(created_at: :desc).first
           @supply.series_id = most_recent_serie.id
         else
-          raise "segundo" if last_supply.nil?
           @supply.series_id = last_supply.series_id
         end
 
