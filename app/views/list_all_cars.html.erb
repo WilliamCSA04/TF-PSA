@@ -36,7 +36,7 @@
               <td><%= element.fuel_capacity %></td>
               <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-edit"></i><% end %></td>
               <td>
-                <form action="/supplies/get/<%=element.id%>" method="get">
+                <form action="/supplies/show/<%=element.id%>" method="get">
                   <button type="submit" class="btn-glyphicon">
                     <i class="glyphicon glyphicon-scale"></i>
                   </button>

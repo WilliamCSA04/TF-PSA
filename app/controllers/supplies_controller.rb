@@ -1,11 +1,12 @@
 class SuppliesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
 
   def index
     @supplies = Supply.get_all_supplies
   end
 
   def get
-    # @supply = Supply.find(:supply_id)
+    @supply = Supply.find(:supply_id)
     render :template => "register_supply"
   end
 
@@ -40,6 +41,7 @@ class SuppliesController < ApplicationController
   end
 
   def show
+    @id = params[:car_id]
     render :template => "register_supply"
   end
 
