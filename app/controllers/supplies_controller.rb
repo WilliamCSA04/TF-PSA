@@ -5,7 +5,8 @@ class SuppliesController < ApplicationController
   end
 
   def get
-    @supply = Supply.find(:supply_id)
+    # @supply = Supply.find(:supply_id)
+    render :template => "register_supply"
   end
 
   def create

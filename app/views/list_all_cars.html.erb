@@ -7,7 +7,6 @@
 <body>
   <div class="container">
     <h1>Lista de veículos</h1>
-    <form action="/cars/index" method="post">
       <div class="row">
         <div class="col-lg-12 form-group">
           <table style="width:100%">
@@ -35,9 +34,16 @@
               <td><%= element.odometer %></td>
               <td><%= element.fuel_type %></td>
               <td><%= element.fuel_capacity %></td>
-              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-edit"></i><% end %>
-              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-scale"></i><% end %>
-              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-remove"></i><% end %>
+              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-edit"></i><% end %></td>
+              <td>
+                <form action="/supplies/get/<%=element.id%>" method="get">
+                  <button type="submit" class="btn-glyphicon">
+                    <i class="glyphicon glyphicon-scale"></i>
+                  </button>
+                </form>
+
+              </td>
+              <td><%= link_to root_path, class: "" do %><i class="glyphicon glyphicon-remove"></i><% end %></td>
               </tr>
               <% end %>
 
@@ -48,7 +54,6 @@
           </table>
         </div>
       </div>
-    </form>
   </div>
 </body>
 </html>
