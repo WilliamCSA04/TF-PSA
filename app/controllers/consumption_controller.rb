@@ -4,7 +4,7 @@ class ConsumptionController < ApplicationController
   def index
 
     begin
-      @consumption = Supply.where(car_id: :car_id)
+      @consumption = Supply.where(car_id: params[:car_id])
       raise "invalid object is null" unless @consumption.present?
       render :template => "car_consumption"
     rescue => e
