@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   put 'supplies/update/:supply_id' => 'supplies#update'
 
   # consumption routes
-  get 'car_consumption/index' => 'consumption#index'
   get 'car_consumption/report' => 'consumption#search'
 
   # Example of regular route:
