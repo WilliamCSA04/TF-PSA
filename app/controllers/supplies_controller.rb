@@ -20,7 +20,7 @@ class SuppliesController < ApplicationController
       @car.update(odometer: odometer)
       total_cost = Integer(params[:cost_liter]) * Integer(params[:fuel_quantity])
       @supply = Supply.new(fuel_type: :fuel_type, fuel_quantity: params[:fuel_quantity], odometer_from_car: odometer, cost_liter: params[:cost_liter], total_cost: total_cost, car_id: params[:car_id])
-      if params[:new_series].nil? || params[:new_series] == "true"
+      if params[:new_series] == "true" || Supply.where(car_id: @car.id).empty?
         Serie.create!
         most_recent_serie = Serie.all.order(created_at: :desc).first
         @supply.series_id = most_recent_serie.id
