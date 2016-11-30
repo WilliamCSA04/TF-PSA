@@ -5,6 +5,54 @@
     <title>Relatório</title>
   </head>
   <body>
-    <h1>em desenvolvimento</h1>
+    <div class="container">
+      <h1>Relatório de Consumo</h1>
+      <div class="row">
+        <div class="col-lg-12 form-group">
+          <table>
+            <tr>
+              <td>Serie</td>
+              <td>Eficacia</td>
+              <td>Distancia</td>
+              <td>Custo total</td>
+            </tr>
+            <% @series_hash.each do |key, array| %>
+            <tr>
+              <td><%= key %></td>
+              <td><%= array[0] %></td>
+              <td><%= array[1] %></td>
+              <td><%= array[2] %></td>
+            </tr>
+            <%end%>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Relatório de Abastecimentos</h1>
+      <div class="row">
+        <div class="col-lg-12 form-group">
+          <table>
+            <tr>
+              <td>Tipo de combustivel</td>
+              <td>Odomoetro</td>
+              <td>Quantidade de combustivel</td>
+              <td>Custo total</td>
+              <td>Custo por litro</td>
+            </tr>
+            <% @supplies.each do |supply| %>
+            <tr>
+              <td><%= supply.fuel_type %></td>
+              <td><%= supply.odometer_from_car %></td>
+              <td><%= supply.fuel_quantity %></td>
+              <td><%= supply.total_cost %></td>
+              <td><%= supply.cost_liter %></td>
+            </tr>
+            <%end%>
+          </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
