@@ -19,8 +19,8 @@
   Car.create(fuel_type: 'Gasolina normal', plate: '4A2B3C', model: 'teste', year: '1999', fuel_capacity: 100, manufacturer: 'teste')
 
   Supply.create(fuel_type: 'Gasolina normal', odometer_from_car: 0, fuel_quantity: 50, total_cost: 100, cost_liter: 2, series_id: 1, car_id: 1)
-  Supply.create(fuel_type: 'Gasolina normal', odometer_from_car: 0, fuel_quantity: 50, total_cost: 100, cost_liter: 2, series_id: 1, car_id: 1)
-  Supply.create(fuel_type: 'Gasolina normal', odometer_from_car: 0, fuel_quantity: 50, total_cost: 100, cost_liter: 2, series_id: 2, car_id: 1)
+  Supply.create(fuel_type: 'Gasolina normal', odometer_from_car: 5, fuel_quantity: 50, total_cost: 100, cost_liter: 2, series_id: 1, car_id: 1)
+  Supply.create(fuel_type: 'Gasolina normal', odometer_from_car: 15, fuel_quantity: 50, total_cost: 100, cost_liter: 2, series_id: 2, car_id: 1)
 
   # t.string   "fuel_type",         null: false
   # t.integer  "odometer_from_car", null: false

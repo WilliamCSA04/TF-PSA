@@ -40,6 +40,7 @@
               <td>Quantidade de combustivel</td>
               <td>Custo total</td>
               <td>Custo por litro</td>
+              <td>Data</td>
             </tr>
             <% @supplies.each do |supply| %>
             <tr>
@@ -48,6 +49,7 @@
               <td><%= supply.fuel_quantity %></td>
               <td><%= supply.total_cost %></td>
               <td><%= supply.cost_liter %></td>
+              <td><%= supply.created_at %></td>
             </tr>
             <%end%>
           </table>
