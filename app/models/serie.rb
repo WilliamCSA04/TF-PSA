@@ -1,5 +1,5 @@
 class Serie < ActiveRecord::Base
-  has_one :supply
+  has_many :supplies
 
 
 end
