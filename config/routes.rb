@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   put 'cars/update/:car_id' => 'cars#update'
   get 'cars/show' => 'cars#show'
   get 'cars/index' => 'cars#index'
-  get 'car_consumption/index' => 'consumption#index'
   get 'cars/get/:car_id' => 'cars#get'
   post 'cars' => 'cars#create'
 
@@ -23,6 +22,10 @@ Rails.application.routes.draw do
   get 'supplies/show/:car_id' => 'supplies#show'
   post 'supplies' => 'supplies#create'
   put 'supplies/update/:supply_id' => 'supplies#update'
+
+  # consumption routes
+  get 'car_consumption/index' => 'consumption#index'
+  get 'car_consumption/report' => 'consumption#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -9,10 +9,17 @@
     <h1>Lista de veículos</h1>
       <div class="row">
         <div class="col-lg-12 form-group">
-          <label for="">
-            Digite a placa de seu carro para ver o relatorio:
-            <input type="text" />
-          </label>
+          <form action="../car_consumption/report" method="get">
+            <label for="search_field">
+              Digite a placa de seu carro para ver o relatorio:
+              <input type="text" id="search_field" name="search_field"/>
+
+            </label>
+            <button type="submit" class="btn-glyphicon" name="button">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </form>
+
           <table style="width:100%">
             <% if @cars.size > 0 %>
             <% @cars.each do |element| %>
