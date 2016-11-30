@@ -1,4 +1,4 @@
-TF - Programação de Software Aplicado
+TF - Programação de Software Aplicado [![Build Status](https://snap-ci.com/WilliamCSA04/TF-PSA/branch/master/build_image)](https://snap-ci.com/WilliamCSA04/TF-PSA/branch/master)
 ======
 
 ### a) Datas
