@@ -23,7 +23,7 @@ has_many :supplies
         total_distance = max_serie_distance - min_serie_distance
         min_serie_distance = 100000000
         max_serie_distance = 0
-        values = [total_liter, total_distance, total_cost]
+        values = [total_distance/total_liter, total_distance, total_cost]
         total_cost = 0
         total_liter = 0
         series_hash[actual_serie] = values
@@ -36,12 +36,12 @@ has_many :supplies
       if element_distance >= max_serie_distance
         max_serie_distance = element_distance
       end
-      total_liter += (s.total_cost / s.cost_liter)
+      total_liter += (s.total_cost.to_f / s.cost_liter.to_f)
       total_cost += s.total_cost
     end
 
     total_distance = max_serie_distance - min_serie_distance
-    values = [total_liter, total_distance, total_cost]
+    values = [total_distance/total_liter, total_distance, total_cost]
     series_hash[actual_serie] = values
     series_hash
 

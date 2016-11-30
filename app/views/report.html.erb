@@ -49,7 +49,7 @@
               <td><%= supply.fuel_quantity %></td>
               <td><%= supply.total_cost %></td>
               <td><%= supply.cost_liter %></td>
-              <td><%= supply.created_at %></td>
+              <td><%= supply.created_at.strftime("%d/%m/%Y") %></td>
             </tr>
             <%end%>
           </table>
