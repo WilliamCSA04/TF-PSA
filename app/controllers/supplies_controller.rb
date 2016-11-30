@@ -13,9 +13,13 @@ class SuppliesController < ApplicationController
   def create
     begin
       @car = Car.find(params[:car_id])
-      raise "Car not registerred" unless @car.valid?
+      raise "Car not registerred" unless @car.present?
+      raise "To much fuel" if @car.fuel_capacity < Integer(params[:fuel_quantity])
+      odometer = Integer(params[:odometer_from_car])
+      raise "Odometer cant go back" if @car.odometer >= odometer
+      @car.update(odometer: odometer)
       total_cost = Integer(params[:cost_liter]) * Integer(params[:fuel_quantity])
-      @supply = Supply.new(fuel_type: :fuel_type, fuel_quantity: params[:fuel_quantity], odometer_from_car: @car.odometer, cost_liter: params[:cost_liter], total_cost: total_cost, car_id: params[:car_id])
+      @supply = Supply.new(fuel_type: :fuel_type, fuel_quantity: params[:fuel_quantity], odometer_from_car: odometer, cost_liter: params[:cost_liter], total_cost: total_cost, car_id: params[:car_id])
       if params[:new_series].nil?
         Serie.create!
         most_recent_serie = Serie.all.order(created_at: :desc).first

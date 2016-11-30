@@ -32,11 +32,18 @@
       </div>
       <div class="row">
         <div class="col-lg-4 form-group">
-          <input class='inpt-invisible' name="car_id" id="car_id" value="<%=@id%>" />
-          <input type="checkbox" name="new_series" id="new_series" value="true">
-          <button class="btn btn-primary" type="submit">Enviar</button>
+          <label for='odometer_from_car' class="control-label">Odometro: </label>
+          <input type="text" placeholder="Valor do odometro" id='odometer_from_car' name='odometer_from_car' class="form-control"/>
         </div>
       </div>
+      <div class="row">
+        <div class="col-lg-4 form-group">
+          <input class='inpt-invisible' name="car_id" id="car_id" value="<%=@id%>" />
+          Marque se deseja iniciar nova serie
+          <input type="checkbox" name="new_series" id="new_series" value="true">
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Enviar</button>
     </form>
   </div>
 </body>
