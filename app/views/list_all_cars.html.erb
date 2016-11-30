@@ -9,6 +9,10 @@
     <h1>Lista de veículos</h1>
       <div class="row">
         <div class="col-lg-12 form-group">
+          <label for="">
+            Digite a placa de seu carro para ver o relatorio:
+            <input type="text" />
+          </label>
           <table style="width:100%">
             <% if @cars.size > 0 %>
             <% @cars.each do |element| %>
