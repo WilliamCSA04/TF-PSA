@@ -13,7 +13,10 @@ class CarsController < ApplicationController
     supplies.each do |supply|
       total += supply.fuel_quantity
     end
-    @value = total/supplies.length
+    if supplies.length > 0
+      @value = total/supplies.length
+    end
+    @value = total
     render :template => "update_car"
   end
 
@@ -36,10 +39,14 @@ class CarsController < ApplicationController
   def update
     begin
       @car = Car.find(params[:car_id])
+      raise "erro" unless @car.valid?
       @car.update_attributes(cars_params)
+      flash[:notice] = 'Dados atualizados'
       redirect_to "/"
     rescue => e
-      render(json: {error: e.message}, status: :unprocessable_entity)
+      flash[:notice] = "Erro durante a atualizar"
+      actual_page = "/cars/get/#{@car.id}"
+      redirect_to actual_page
     end
   end
 

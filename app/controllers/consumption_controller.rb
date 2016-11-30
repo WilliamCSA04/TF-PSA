@@ -11,7 +11,8 @@ class ConsumptionController < ApplicationController
       @series_hash = @car.get_all_car_statistics
       render :template => 'report'
     rescue => e
-      render(json: {error: e.message}, status: :unprocessable_entity)
+      flash[:notice] = 'Não há informações sobre esse veiculo ou ocorreu um erro na pesquisas'
+      redirect_to '/cars/index'
     end
   end
 

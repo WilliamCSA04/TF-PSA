@@ -39,7 +39,9 @@ class SuppliesController < ApplicationController
       @supply.save!
       redirect_to '/'
     rescue => e
-      render(json: {error: e.message}, status: :unprocessable_entity)
+      flash[:notice] = "Erro durante o cadastro, tente mais tarde"
+      actual_page = "/supplies/show/#{@car.id}"
+      redirect_to actual_page
     end
 
   end

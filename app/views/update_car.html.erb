@@ -9,6 +9,9 @@
     <div class="row">
       <div class="col-lg-6">
         <h1>Atualizar veículo</h1>
+        <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
         <form action="/cars/update/<%=@car.id%>" method="post">
           <input type="hidden" name="_method" value="put">
           <div class="row">
