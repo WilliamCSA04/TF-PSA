@@ -8,6 +8,12 @@ class CarsController < ApplicationController
 
   def get
     @car = Car.find(params[:car_id])
+    supplies = Supply.where(car_id: @car.id)
+    total = 0
+    supplies.each do |supply|
+      total += supply.fuel_quantity
+    end
+    @value = total/supplies.length
     render :template => "update_car"
   end
 
