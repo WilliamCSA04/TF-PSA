@@ -27,6 +27,7 @@ class CarsController < ApplicationController
         raise "Erro no cadastro"
       end
     rescue => e
+      flash[:notice] = "Por favor preencha todos os campos, caso o erro continue, tente mais tarde"
       redirect_to '/cars/show'
     end
   end
