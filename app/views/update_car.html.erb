@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Atualizar carro</title>
-  </head>
-  <body>
-    <h1>Atualizar carro</h1>
-    <ul>
-      <li>Placa: <%=@car.plate%></li>
-      <li>Tipo de combustivel <%=@car.fuel_type%></li>
-      <li>Capacidade de combustivel <%=@car.fuel_capacity%></li>
-      <li>Modelo: <%=@car.model%></li>
-      <li>Fabricador: <%=@car.manufacturer%></li>
-      <li>Odometro: <%=@car.odometer%></li>
-      <li>Ano: <%=@car.year%></li>
-      <li>média de consumo: <%=@value%></li>
-    </ul>
-
-
-    <div class="container">
-      <h1>Atualizar veículos</h1>
-      <form action="/cars/update/<%=@car.id%>" method="post">
-        <input type="hidden" name="_method" value="put">
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='plate' class="control-label">Placa: </label>
-            <input type="text" placeholder="Placa do veículo" id='plate' name='plate' class="form-control"/>
+<head>
+  <meta charset="utf-8">
+  <title>Atualizar carro</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>Atualizar veículo</h1>
+        <form action="/cars/update/<%=@car.id%>" method="post">
+          <input type="hidden" name="_method" value="put">
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='plate' class="control-label">Placa: </label>
+              <input type="text" id='plate' name='plate' class="form-control" value="<%=@car.plate%>"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='model' class="control-label">Modelo: </label>
-            <input type="text" placeholder="Modelo do veículo" id='model' name='model' class="form-control"/>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='model' class="control-label">Modelo: </label>
+              <input type="text" id='model' name='model' class="form-control" value="<%=@car.model%>"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='year' class="control-label">Ano: </label>
-            <input type="text" placeholder="Ano do veículo" id='year' name='year' class="form-control"/>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='year' class="control-label">Ano: </label>
+              <input type="text" id='year' name='year' class="form-control" value="<%=@car.year%>"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='manufacturer' class="control-label">Fabricante: </label>
-            <input type="text" placeholder="Fabricante do veículo" id='manufacturer' name='manufacturer' class="form-control"/>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='manufacturer' class="control-label">Fabricante: </label>
+              <input type="text" id='manufacturer' name='manufacturer' class="form-control" value="<%=@car.manufacturer%>"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='fuel_type' class="control-label">Combustivel: </label>
-            <select placeholder="Tipo do combustivel" id='fuel_type' name='fuel_type' class="form-control">
-              <option value="Gasolina normal">Gasolina normal</option>
-              <option value="Gasolina aditivada">Gasolina aditivada</option>
-              <option value="Alcool">Alcool</option>
-            </select>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='fuel_type' class="control-label">Combustivel: </label>
+              <select placeholder="Tipo do combustivel" id='fuel_type' name='fuel_type' class="form-control">
+                <option value="Gasolina normal">Gasolina normal</option>
+                <option value="Gasolina aditivada">Gasolina aditivada</option>
+                <option value="Alcool">Alcool</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='fuel_capacity' class="control-label">Capacidade: </label>
-            <input type="text" placeholder="Quantidade maxima de combustivel" id='fuel_capacity' name='fuel_capacity' class="form-control"/>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='fuel_capacity' class="control-label">Capacidade: </label>
+              <input type="text" pid='fuel_capacity' name='fuel_capacity' class="form-control" value="<%=@car.fuel_capacity%>"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <label for='odometer' class="control-label">Odometro: </label>
-            <input type="text" placeholder="Valor do odometro" id='odometer' name='odometer' class="form-control"/>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <label for='odometer' class="control-label">Odometro: </label>
+              <input type="text" id='odometer' name='odometer' class="form-control" value="<%=@car.odometer%>"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 form-group">
-            <button class="btn btn-primary" type="submit">Enviar</button>
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
+      <h1>Informações Atuais do Veículo</h1>
+      <ul>
+        <li>Placa: <%=@car.plate%></li>
+        <li>Tipo de combustivel: <%=@car.fuel_type%></li>
+        <li>Capacidade de combustivel: <%=@car.fuel_capacity%></li>
+        <li>Modelo: <%=@car.model%></li>
+        <li>Fabricador: <%=@car.manufacturer%></li>
+        <li>Odometro: <%=@car.odometer%></li>
+        <li>Ano: <%=@car.year%></li>
+        <li>média de consumo: <%=@value%></li>
+      </ul>
     </div>
-  </body>
+  </div>
+</body>
 </html>
