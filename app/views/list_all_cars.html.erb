@@ -40,7 +40,10 @@
             <% @cars.each do |element| %>
             <tr>
               <td><%= element.id %></td>
-              <td><%= element.plate %></td>
+
+              <form action="/car_consumption/report" method="get">
+                <td> <button class="btn-glyphicon" value='<%=element.plate%>' name="search_field" id="search_field" type='submit'><%= element.plate %></button> </td>
+              </form>
               <td><%= element.manufacturer %></td>
               <td><%= element.model %></td>
               <td><%= element.year %></td>
