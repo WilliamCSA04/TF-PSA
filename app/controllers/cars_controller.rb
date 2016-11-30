@@ -22,6 +22,7 @@ class CarsController < ApplicationController
       @car = Car.new(cars_params)
       raise "invalid params" unless @car.valid?
       if @car.save!
+        flash[:notice] = "Carro cadastrado com sucesso"
         redirect_to '/'
       else
         raise "Erro no cadastro"
