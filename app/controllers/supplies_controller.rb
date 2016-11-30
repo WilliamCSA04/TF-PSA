@@ -37,6 +37,7 @@ class SuppliesController < ApplicationController
       end
       raise "invalid parameters" unless @supply.valid?
       @supply.save!
+      flash[:notice] = 'Cadastro de abastecimento feito'
       redirect_to '/'
     rescue => e
       flash[:notice] = "Erro durante o cadastro, tente mais tarde"
