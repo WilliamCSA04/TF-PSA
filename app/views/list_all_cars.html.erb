@@ -21,8 +21,6 @@
           </form>
 
           <table>
-            <% if @cars.size > 0 %>
-            <% @cars.each do |element| %>
             <tr>
               <th>ID</th>
               <th>Placa</th>
@@ -35,6 +33,8 @@
               <th>Atualizar</th>
               <th>Add. Abastecimento</th>
             </tr>
+            <% if @cars.size > 0 %>
+            <% @cars.each do |element| %>
             <tr>
               <td><%= element.id %></td>
               <td><%= element.plate %></td>
