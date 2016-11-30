@@ -40,6 +40,7 @@ class CarsController < ApplicationController
   def update
     begin
       @car = Car.find(params[:car_id])
+      raise "invalid plate" unless Car.where(plate: params[:plate]).empty?
       raise "erro" unless @car.valid?
       @car.update_attributes(cars_params)
       flash[:notice] = 'Dados atualizados'
